@@ -330,9 +330,9 @@ class OutputGenerator(DataManager):
         func_standard_deviation = lambda x: round(np.std(select_field(x), ddof=0), 2)
         self.output['gdp_per_capita'] = {
             'description': 'GDP per capita across counties won by each major party',
-            'd_median': func_median(0), 'r_median': func_median(1),
             'd_mean': func_mean(0), 'r_mean': func_mean(1),
             'd_standard_deviation': func_standard_deviation(0), 'r_standard_deviation': func_standard_deviation(1),
+            'd_median': func_median(0), 'r_median': func_median(1),
         }
 
     def _calc_gdp_growth(self):
