@@ -380,19 +380,15 @@ def run_scraper():
         scraper.merge_multi_state()
 
 
-def regenerate_results():
+def generate_output():
     MultiStateScraper(fips_nums=DataManager().states.fips_state).merge_multi_state()
+
     output = OutputGenerator()
     output.refresh_vote_summary()
     output.vote_summary_with_gdp.to_csv(_VOTE_SUMMARY_FILEPATH + '.with_gdp.csv', index=False)
-
-
-def generate_output():
-    analyzer = OutputGenerator()
-    analyzer.run()
-    dump(analyzer.output, open(_DATA_DIR + 'output.json', 'w'))
+    output.run()
+    dump(output.output, open(_DATA_DIR + 'output.json', 'w'))
 
 
 if __name__ == '__main__':
-    regenerate_results()
     generate_output()
