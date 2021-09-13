@@ -20,17 +20,12 @@ FIPS code for each state from [this link at census.gov](https://www.census.gov/g
 
 ## Election Results
 
-Unofficial county-level election results via Politico / Associated Press feed. (I originally did this analysis before official results were available.)
+County-level election returns [via MIT Election Data and Science Lab (MEDSL)](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/VOQCHQ)
 
-Scraped for each state FIPS code using the following URL formats:
-
-- counties (FIPS-to-name): https://www.politico.com/2020-statewide-metadata/{STATE_FIPS_CODE}/county-names.meta.json
-- candidates: https://www.politico.com/2020-statewide-metadata/{STATE_FIPS_CODE}/potus.meta.json
-- county-level results: https://www.politico.com/2020-statewide-results/{STATE_FIPS_CODE}/potus-counties.json
+MIT Election Data and Science Lab, 2018, "County Presidential Election Returns 2000-2020", https://doi.org/10.7910/DVN/VOQCHQ, Harvard Dataverse, V9, UNF:6:qSwUYo7FKxI6vd/3Xev2Ng== [fileUNF]
 
 ---
 
 ## To-Do
 
-- use official election results instead
 - summarize outputs
