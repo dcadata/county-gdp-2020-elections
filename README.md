@@ -1,5 +1,11 @@
 # County-level analysis of GDP and 2020 election results
 
+---
+
+**[Visualizations - Tableau Public workbook](https://public.tableau.com/app/profile/devon.ankar/viz/UScountiesbyGDPandelectionresults/GDPwinner)**
+
+---
+
 ## GDP
 
 Via [BEA - GDP by County, Metro, and Other Areas](https://www.bea.gov/data/gdp/gdp-county-metro-and-other-areas). From [this page](https://apps.bea.gov/regional/downloadzip.cfm), I downloaded the dataset "CAGDP1: GDP Summary by County and MSA". County data was used in this analysis, and GDP is in current-dollar GDP (thousands of current dollars).
@@ -27,5 +33,4 @@ Scraped for each state FIPS code using the following URL formats:
 ## To-Do
 
 - use official election results instead
-- publish Tableau Public workbook/visualizations
 - summarize outputs
