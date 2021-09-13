@@ -28,3 +28,4 @@ Scraped for each state FIPS code using the following URL formats:
 
 - use official election results instead
 - publish Tableau Public workbook/visualizations
+- summarize outputs
