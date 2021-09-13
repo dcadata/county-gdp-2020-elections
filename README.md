@@ -14,10 +14,6 @@ Via [BEA - GDP by County, Metro, and Other Areas](https://www.bea.gov/data/gdp/g
 
 Population estimates from [this page](https://www.census.gov/data/tables/time-series/demo/popest/2010s-counties-total.html): "Datasets" > "Population, Population Change, and Estimated Components of Population Change: April 1, 2010 to July 1, 2019 (CO-EST2019-alldata)"
 
-## State FIPS
-
-FIPS code for each state from [this link at census.gov](https://www.census.gov/geographies/reference-files/2017/demo/popest/2017-fips.html)
-
 ## Election Results
 
 County-level election returns [via MIT Election Data and Science Lab (MEDSL)](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/VOQCHQ)
