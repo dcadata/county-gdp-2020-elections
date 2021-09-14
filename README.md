@@ -1,7 +1,30 @@
 # County-level analysis of GDP and 2020 election results
 
+---
 
-**[Visualizations - Tableau Public workbook with 4 tabs](https://public.tableau.com/app/profile/devon.ankar/viz/UScountiesbyGDPandelectionresults/GDPwinner)**
+# Results
+
+**[Visualizations via Tableau Public - 4 tabs](https://public.tableau.com/app/profile/devon.ankar/viz/UScountiesbyGDPandelectionresults/GDPwinner)**
+
+**description: Counties won by each major party**  
+d: 512  
+r: 2550
+
+**description: Proportion of GDP accounted for by counties won by each major party**  
+d: 0.699  
+r: 0.283
+
+**description: GDP per capita across counties won by each major party**  
+d_median: 53.47  
+r_median: 41.16  
+d_mean: 60.66  
+r_mean: 61.87  
+d_standard_deviation: 40.89  
+r_standard_deviation: 554.82
+
+---
+
+# Data Sources
 
 Data from some counties is missing. Data available for only 3063 counties.
 
@@ -23,7 +46,6 @@ County-level election returns via [MIT Election Data and Science Lab (MEDSL)](ht
 
 ---
 
-## To-Do
+# To-Do
 
-- summarize outputs
 - maybe add income analysis (using a different BEA dataset)
