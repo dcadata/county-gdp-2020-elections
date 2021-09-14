@@ -1,10 +1,7 @@
 # County-level analysis of GDP and 2020 election results
 
----
 
-**[Visualizations - Tableau Public workbook](https://public.tableau.com/app/profile/devon.ankar/viz/UScountiesbyGDPandelectionresults/GDPwinner)**
-
----
+**[Visualizations - Tableau Public workbook with 4 tabs](https://public.tableau.com/app/profile/devon.ankar/viz/UScountiesbyGDPandelectionresults/GDPwinner)**
 
 Data from some counties is missing. Data available for only 3063 counties.
 
@@ -29,4 +26,4 @@ County-level election returns via [MIT Election Data and Science Lab (MEDSL)](ht
 ## To-Do
 
 - summarize outputs
-- maybe add income analysis (also using BEA data)
+- maybe add income analysis (using a different BEA dataset)
