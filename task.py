@@ -202,22 +202,22 @@ class OutputGenerator(Summarizer):
 
     def run(self):
         self._results = self.election_results_with_gdp.copy()
-        self._calc_counties_won()
-        self._calc_gdp_plain()
-        # self._calc_gdp_weighted()
-        self._calc_gdp_per_capita()
-        self._calc_gdp_growth()
+        self._calculate_counties_won()
+        self._calculate_gdp()
+        # self._calculate_weighted_gdp()
+        self._calculate_gdp_per_capita()
+        self._calculate_gdp_growth()
 
-    def _calc_counties_won(self):
+    def _calculate_counties_won(self):
         func = lambda x: len(self._filter_by_r_winner(x))
         self._output.append({'description': 'Counties won by each major party', 'd': func(0), 'r': func(1)})
 
-    def _calc_gdp_plain(self):
+    def _calculate_gdp(self):
         func = lambda x: round(self._filter_by_r_winner(x)['gdp'].sum() / self._national_gdp, 3)
         self._output.append(self._create_output(
             func(0), func(1), description='Proportion of GDP accounted for by counties won by each major party'))
 
-    def _calc_gdp_weighted(self):
+    def _calculate_weighted_gdp(self):
         func = lambda name: round(
             self._results[self._results.candidate_shortname == name].gdp_weighted_by_vote_share.sum() /
             self._national_gdp, 3
@@ -228,7 +228,7 @@ class OutputGenerator(Summarizer):
         )
         self._output.append(self._create_output(func('Biden'), func('Trump'), description=description))
 
-    def _calc_gdp_per_capita(self):
+    def _calculate_gdp_per_capita(self):
         select_field = lambda x: self._filter_by_r_winner(x)['gdp_per_capita']
         func_median = lambda x: round(np.median(select_field(x)), 2)
         func_mean = lambda x: round(np.mean(select_field(x)), 2)
@@ -240,7 +240,7 @@ class OutputGenerator(Summarizer):
             'd_standard_deviation': func_standard_deviation(0), 'r_standard_deviation': func_standard_deviation(1),
         })
 
-    def _calc_gdp_growth(self):
+    def _calculate_gdp_growth(self):
         vs = self._county_gdp_growth_with_vote_share.copy()
         biden = vs[vs.candidate_shortname == 'Biden'].copy()
         output = {'description': (
