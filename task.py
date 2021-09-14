@@ -1,4 +1,3 @@
-from json import dump
 import numpy as np
 import pandas as pd
 
@@ -200,7 +199,7 @@ class OutputGenerator(Summarizer):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self._results = None
-        self.output = {}
+        self._output = []
 
     def run(self):
         self._results = self.election_results_with_gdp.copy()
@@ -212,45 +211,46 @@ class OutputGenerator(Summarizer):
 
     def _calc_counties_won(self):
         func = lambda x: len(self._filter_by_r_winner(x))
-        self.output['won'] = {'description': 'Counties won by each major party', 'd': func(0), 'r': func(1)}
+        self._output.append({'description': 'Counties won by each major party', 'd': func(0), 'r': func(1)})
 
     def _calc_gdp_plain(self):
         func = lambda x: round(self._filter_by_r_winner(x)['gdp'].sum() / self._national_gdp, 3)
-        self.output['gdp'] = self._create_output(
-            func(0), func(1), description='Proportion of GDP accounted for by counties won by each major party')
+        self._output.append(self._create_output(
+            func(0), func(1), description='Proportion of GDP accounted for by counties won by each major party'))
 
     def _calc_gdp_weighted(self):
         func = lambda name: round(
             self._results[self._results.candidate_shortname == name].gdp_weighted_by_vote_share.sum() /
             self._national_gdp, 3
         )
-        self.output['gdp_weighted'] = self._create_output(
-            func('Biden'), func('Trump'),
-            description='Proportion of GDP accounted for by counties won by each major party - weighted by vote share'
-                        ' instead of using win/loss'
+        description = (
+            'Proportion of GDP accounted for by counties won by each major party - weighted by vote share instead of'
+            ' using win/loss'
         )
+        self._output.append(self._create_output(func('Biden'), func('Trump'), description=description))
 
     def _calc_gdp_per_capita(self):
         select_field = lambda x: self._filter_by_r_winner(x)['gdp_per_capita']
         func_median = lambda x: round(np.median(select_field(x)), 2)
         func_mean = lambda x: round(np.mean(select_field(x)), 2)
         func_standard_deviation = lambda x: round(np.std(select_field(x), ddof=0), 2)
-        self.output['gdp_per_capita'] = {
+        self._output.append({
             'description': 'GDP per capita across counties won by each major party',
             'd_median': func_median(0), 'r_median': func_median(1),
             'd_mean': func_mean(0), 'r_mean': func_mean(1),
             'd_standard_deviation': func_standard_deviation(0), 'r_standard_deviation': func_standard_deviation(1),
-        }
+        })
 
     def _calc_gdp_growth(self):
         vs = self._county_gdp_growth_with_vote_share.copy()
         biden = vs[vs.candidate_shortname == 'Biden'].copy()
-        output = {
-            'description': 'Simple correlation at county-level of GDP growth over specified time frame to D vote share'}
+        output = {'description': (
+            'Simple correlation at county-level of GDP growth over specified time frame to D vote share'
+        )}
         for elapsed in self._years_elapsed:
             output[f'{elapsed}y_growth_pct'] = round(biden[f'{elapsed}y_growth_pct'].corr(biden.vote_share), 3)
 
-        self.output['gdp_growth'] = output
+        self._output.append(output)
 
     def _filter_by_r_winner(self, x):
         df = self._results[['fips_county', 'r_winner', 'gdp', 'gdp_per_capita']].drop_duplicates()
@@ -272,6 +272,10 @@ class OutputGenerator(Summarizer):
 
         return output
 
+    @property
+    def output_str(self):
+        return '\n\n'.join('  \n'.join('{}: {}'.format(*i) for i in item.items()) for item in self._output)
+
 
 def _normalize_column_names(df):
     return df.rename(columns=dict((col, col.strip().lower()) for col in df.columns))
@@ -281,7 +285,7 @@ def main():
     output = OutputGenerator()
     output.run()
     output.election_results_with_gdp.to_csv(_DATA_DIR + 'vote_summary.csv.with_gdp.csv', index=False)
-    dump(output.output, open(_DATA_DIR + 'output.json', 'w'))
+    open(_DATA_DIR + 'output.txt', 'w').write(output.output_str)
 
 
 if __name__ == '__main__':
