@@ -100,7 +100,7 @@ class ElectionResultsParser:
         return df
 
 
-class CountyGDPParser(ElectionResultsParser):
+class CountyGDPParser:
     _county_gdp_filepath = _DATA_DIR + 'sources/CAGDP1__ALL_AREAS_2001_2019.csv'
     _target_year = 2019  # 2020 data not available yet via BEA
     _target_year_str = str(_target_year)
@@ -153,7 +153,7 @@ class CountyGDPParser(ElectionResultsParser):
         return county_gdp
 
 
-class Summarizer(CountyGDPParser):
+class Summarizer(ElectionResultsParser, CountyGDPParser):
     _pop_est_filepath = _DATA_DIR + 'sources/co-est2019-alldata.csv'
     _years_elapsed = (2, 4, 8, 10)
 
