@@ -5,15 +5,15 @@
 
 **[Visualizations via Tableau Public - 4 tabs](https://public.tableau.com/app/profile/devon.ankar/viz/UScountiesbyGDPandelectionresults/GDPwinner)**
 
-**description: Counties won by each major party**  
+**Counties won by each major party**  
 d: 512  
 r: 2550
 
-**description: Proportion of GDP accounted for by counties won by each major party**  
+**Proportion of GDP accounted for by counties won by each major party**  
 d: 0.699  
 r: 0.283
 
-**description: GDP per capita across counties won by each major party**  
+**GDP per capita across counties won by each major party**  
 d_median: 53.47  
 r_median: 41.16  
 d_mean: 60.66  
@@ -41,8 +41,3 @@ Population estimates from [this page](https://www.census.gov/data/tables/time-se
 County-level election returns via [MIT Election Data and Science Lab (MEDSL)](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/VOQCHQ):
 
 >MIT Election Data and Science Lab, 2018, "County Presidential Election Returns 2000-2020", https://doi.org/10.7910/DVN/VOQCHQ, Harvard Dataverse, V9, UNF:6:qSwUYo7FKxI6vd/3Xev2Ng== [fileUNF]
-
-
-## To-Do
-
-- maybe add income analysis (using a different BEA dataset)
