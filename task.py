@@ -89,8 +89,7 @@ class ElectionResultsParser:
         df = func('DEMOCRAT').merge(func('REPUBLICAN'), on='fips_county', suffixes=('_d', '_r'))
         df.loc[df.vote_d > df.vote_r, 'r_winner'] = 0
         df.loc[df.vote_d < df.vote_r, 'r_winner'] = 1
-        df.r_winner = df.r_winner.fillna(-1)
-        df.r_winner = df.r_winner.apply(int)
+        df.r_winner = df.r_winner.fillna(-1).apply(int)  # there are none with -1
         df['r_margin'] = df.vote_share_r - df.vote_share_d
         return df
 
@@ -102,7 +101,7 @@ class ElectionResultsParser:
 
 class CountyGDPParser:
     _county_gdp_filepath = _DATA_DIR + 'sources/CAGDP1__ALL_AREAS_2001_2019.csv'
-    _target_year = 2019  # 2020 data not available yet via BEA
+    _target_year = 2019  # 2020 data not available yet
     _target_year_str = str(_target_year)
 
     @property
