@@ -30,7 +30,7 @@ class ElectionResultsParser:
         df = df[df.year == 2020].drop(columns=['year'])
         df.loc[df.state == 'DISTRICT OF COLUMBIA', 'county_fips'] = '11001'  # DC has no fips for 2020 in this dataset
         df = df[df.county_fips.notna()].copy()
-        df = df[~df.county_fips.str.endswith('000')].copy()
+        df = df[~df.county_fips.str.endswith('000')].copy()  # fips ending with '000' are state-level
         return df
 
     @property
@@ -206,7 +206,7 @@ class OutputGenerator(Summarizer):
         self._results = self.election_results_with_gdp.copy()
         self._calc_counties_won()
         self._calc_gdp_plain()
-        self._calc_gdp_weighted()
+        # self._calc_gdp_weighted()
         self._calc_gdp_per_capita()
         self._calc_gdp_growth()
 
