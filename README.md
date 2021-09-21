@@ -3,7 +3,8 @@
 
 ## Results
 
-### **[Visualizations via Tableau Public - 4 tabs](https://public.tableau.com/app/profile/devon.ankar/viz/UScountiesbyGDPandelectionresults/GDPwinner)** - visit the link for interactive visualizations with text descriptions
+### **[Visualizations via Tableau Public - 4 tabs](https://public.tableau.com/app/profile/devon.ankar/viz/UScountiesbyGDPandelectionresults/GDPwinner)**  
+^ Visit the link for interactive visualizations with text descriptions
 
 | | | | |
 |:--:|:--:|:--:|:--:|
