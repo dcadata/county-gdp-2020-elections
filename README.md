@@ -6,7 +6,7 @@
 ### **[Visualizations via Tableau Public - 4 tabs](https://public.tableau.com/app/profile/devon.ankar/viz/UScountiesbyGDPandelectionresults/GDPwinner)** - visit the link for interactive visualizations with text descriptions
 
 |:--:|:--:|:--:|:--:|
-|![1GDPwinner](img/1GDPwinner.PNG)|![2GDPwinner_bubbles](img/2GDPwinner_bubbles.PNG)|![3GDPweighted](img/3GDPweighted.PNG)|![4GDPpercapita](img/4GDPpercapita.PNG)
+|![1GDPwinner](img/1GDPwinner.PNG)|![2GDPwinner_bubbles](img/2GDPwinner_bubbles.PNG)|![3GDPweighted](img/3GDPweighted.PNG)|![4GDPpercapita](img/4GDPpercapita.PNG)|
 
 
 **Counties won by each major party**  
