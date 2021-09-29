@@ -261,7 +261,7 @@ class OutputGenerator(Summarizer):
         fig = plot.get_figure()
         fig.autofmt_xdate()
         fig.set_size_inches(12, 8)
-        fig.suptitle('GDP per capita across counties won by each major party')
+        fig.suptitle('Distribution of GDP per capita among blue and red counties')
         fig.savefig('img/5GDPpercapita_histogram.png')
 
     def _filter_by_r_winner(self, x):
