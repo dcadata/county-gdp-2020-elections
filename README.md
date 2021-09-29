@@ -21,6 +21,10 @@ r: 2550
 d: 0.699  
 r: 0.283
 
+**Proportion of GDP accounted for by counties won by each major party - weighted by vote share instead of using win/loss**  
+d: 0.498  
+r: 0.359
+
 **GDP per capita across counties won by each major party**  
 d_median: 53.47  
 r_median: 41.16  

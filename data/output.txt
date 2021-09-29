@@ -6,6 +6,10 @@ description: Proportion of GDP accounted for by counties won by each major party
 d: 0.699  
 r: 0.283
 
+description: Proportion of GDP accounted for by counties won by each major party - weighted by vote share instead of using win/loss  
+d: 0.498  
+r: 0.359
+
 description: GDP per capita across counties won by each major party  
 d_median: 53.47  
 r_median: 41.16  
@@ -13,9 +17,3 @@ d_mean: 60.66
 r_mean: 61.87  
 d_standard_deviation: 40.89  
 r_standard_deviation: 554.82
-
-description: Simple correlation at county-level of GDP growth over specified time frame to D vote share  
-2y_growth_pct: 0.01  
-4y_growth_pct: 0.061  
-8y_growth_pct: 0.068  
-10y_growth_pct: 0.001
