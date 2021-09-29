@@ -204,9 +204,9 @@ class OutputGenerator(Summarizer):
         self._results = self.election_results_with_gdp.copy()
         self._calculate_counties_won()
         self._calculate_gdp()
-        # self._calculate_weighted_gdp()
+        self._calculate_weighted_gdp()
         self._calculate_gdp_per_capita()
-        self._calculate_gdp_growth()
+        # self._calculate_gdp_growth()
 
     def _calculate_counties_won(self):
         func = lambda x: len(self._filter_by_r_winner(x))
