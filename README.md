@@ -10,7 +10,7 @@
 | | | | |
 |:--:|:--:|:--:|:--:|
 |![1GDPwinner](img/1GDPwinner.PNG)|![2GDPwinner_bubbles](img/2GDPwinner_bubbles.PNG)|![3GDPweighted](img/3GDPweighted.PNG)|![4GDPpercapita](img/4GDPpercapita.PNG)|
-|US counties by GDP (size) and winning party in 2020 presidential election (color)|US counties by GDP (size) and winning party in 2020 presidential election (color) - bubble version|US counties by weighted GDP - each county's GDP weighted by its D/R vote share in the 2020 presidential election|US counties by GDP per capita (size) and winning party in 2020 presidential election (color)|
+|US counties by GDP and winning party in 2020 presidential election|US counties by GDP and winning party in 2020 presidential election - bubble version|US counties by weighted GDP - each county's GDP weighted by its D/R vote share|US counties by GDP per capita and winning party|
 
 
 **Counties won by each major party**  
