@@ -197,11 +197,11 @@ class Summarizer(ElectionResultsParser, CountyGDPParser):
 class OutputGenerator(Summarizer):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        self._results = None
+        self.results = None
         self._output = []
 
     def run(self):
-        self._results = self.election_results_with_gdp.copy()
+        self.results = self.election_results_with_gdp.copy()
         self._calculate_counties_won()
         self._calculate_gdp()
         self._calculate_weighted_gdp()
@@ -219,7 +219,7 @@ class OutputGenerator(Summarizer):
 
     def _calculate_weighted_gdp(self):
         func = lambda name: round(
-            self._results[self._results.candidate_shortname == name].gdp_weighted_by_vote_share.sum() /
+            self.results[self.results.candidate_shortname == name].gdp_weighted_by_vote_share.sum() /
             self._national_gdp, 3
         )
         description = (
@@ -252,7 +252,7 @@ class OutputGenerator(Summarizer):
         self._output.append(output)
 
     def _filter_by_r_winner(self, x):
-        df = self._results[['fips_county', 'r_winner', 'gdp', 'gdp_per_capita']].drop_duplicates()
+        df = self.results[['fips_county', 'r_winner', 'gdp', 'gdp_per_capita']].drop_duplicates()
         return df[df.r_winner == x]
 
     @staticmethod
@@ -283,7 +283,7 @@ def _normalize_column_names(df):
 def main():
     output = OutputGenerator()
     output.run()
-    output.election_results_with_gdp.to_csv(_DATA_DIR + 'vote_summary.csv.with_gdp.csv', index=False)
+    output.results.to_csv(_DATA_DIR + 'vote_summary.csv.with_gdp.csv', index=False)
     open(_DATA_DIR + 'output.txt', 'w').write(output.output_str)
 
 
