@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+import seaborn as sns
 
 _DATA_DIR = 'data/'
 
@@ -251,6 +252,18 @@ class OutputGenerator(Summarizer):
 
         self._output.append(output)
 
+    def plot_gdp_per_capita_histogram(self):
+        df = self.results[['r_winner', 'gdp_per_capita', 'fips_county']].drop_duplicates()
+        plot = sns.histplot(
+            data=df, x='gdp_per_capita', stat='density', common_norm=False, log_scale=True,
+            hue='r_winner', element='step', palette='dark',
+        )
+        fig = plot.get_figure()
+        fig.autofmt_xdate()
+        fig.set_size_inches(12, 8)
+        fig.suptitle('GDP per capita across counties won by each major party')
+        fig.savefig('img/5GDPpercapita_histogram.png')
+
     def _filter_by_r_winner(self, x):
         df = self.results[['fips_county', 'r_winner', 'gdp', 'gdp_per_capita']].drop_duplicates()
         return df[df.r_winner == x]
@@ -283,6 +296,7 @@ def _normalize_column_names(df):
 def main():
     output = OutputGenerator()
     output.run()
+    output.plot_gdp_per_capita_histogram()
     output.results.to_csv(_DATA_DIR + 'vote_summary.csv.with_gdp.csv', index=False)
     open(_DATA_DIR + 'output.txt', 'w').write(output.output_str)
 
