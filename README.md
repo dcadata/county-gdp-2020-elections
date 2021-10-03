@@ -29,6 +29,8 @@ r: 2550
 d: 0.699  
 r: 0.283
 
+^ [Brookings found that "Biden-voting counties equal 70% of America’s economy"](https://www.brookings.edu/blog/the-avenue/2020/11/09/biden-voting-counties-equal-70-of-americas-economy-what-does-this-mean-for-the-nations-political-economic-divide/). They note that _"2020 figures reflect unofficial results from 99% of counties. Figures for 2020 represent results from 100% of counties for which 2018 GDP data are available."_
+
 **Proportion of GDP accounted for by counties won by each major party, but weighting each county's GDP by its D/R vote share**  
 d: 0.498  
 r: 0.359
@@ -42,11 +44,6 @@ d_standard_deviation: 40.89
 r_standard_deviation: 554.82
 
 ^ The distributions of GDP per capita among blue and red counties are different. From these figures, we would expect both distributions to be right-skewed, with a heavier skew for red counties, which is what the histogram shows. Additionally, based on the standard deviations, we would expect a wider distribution for red counties, which is also apparent in the histogram.
-
-
-[Brookings found that "Biden-voting counties equal 70% of America’s economy"](https://www.brookings.edu/blog/the-avenue/2020/11/09/biden-voting-counties-equal-70-of-americas-economy-what-does-this-mean-for-the-nations-political-economic-divide/). They note that _"2020 figures reflect unofficial results from 99% of counties. Figures for 2020 represent results from 100% of counties for which 2018 GDP data are available."_
-
-The slight difference is probably because my analysis was performed in mid-2021 using certified election results, and I was able to use 2019 GDP data released by the BEA in December 2020 (which was after Brookings completed their analysis).
 
 
 ## Data Sources
