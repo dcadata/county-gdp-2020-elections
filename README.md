@@ -15,6 +15,11 @@
 (Please note that data is not available for all counties.)
 
 
+[Brookings found that "Biden-voting counties equal 70% of America’s economy"](https://www.brookings.edu/blog/the-avenue/2020/11/09/biden-voting-counties-equal-70-of-americas-economy-what-does-this-mean-for-the-nations-political-economic-divide/). They note that _"2020 figures reflect unofficial results from 99% of counties. Figures for 2020 represent results from 100% of counties for which 2018 GDP data are available."_
+
+The slight difference is probably because my analysis was performed in mid-2021 using certified election results, and I was able to use 2019 GDP data released by the BEA in December 2020 (which was after Brookings completed their analysis).
+
+
 **Counties won by each major party**  
 d: 512  
 r: 2550
