@@ -7,6 +7,7 @@
 
 ^ Visit the link for interactive visualizations with text descriptions. Screenshots below:
 
+
 | | | |
 |:--:|:--:|:--:|
 |![1GDPwinner](img/1GDPwinner.PNG)|![2GDPwinner_bubbles](img/2GDPwinner_bubbles.PNG)|![3GDPweighted](img/3GDPweighted.PNG)|
@@ -18,11 +19,6 @@
 |US counties by GDP per capita and winning party|Distribution of GDP per capita among blue and red counties|
 
 (Please note that data is not available for all counties.)
-
-
-[Brookings found that "Biden-voting counties equal 70% of America’s economy"](https://www.brookings.edu/blog/the-avenue/2020/11/09/biden-voting-counties-equal-70-of-americas-economy-what-does-this-mean-for-the-nations-political-economic-divide/). They note that _"2020 figures reflect unofficial results from 99% of counties. Figures for 2020 represent results from 100% of counties for which 2018 GDP data are available."_
-
-The slight difference is probably because my analysis was performed in mid-2021 using certified election results, and I was able to use 2019 GDP data released by the BEA in December 2020 (which was after Brookings completed their analysis).
 
 
 **Counties won by each major party**  
@@ -46,6 +42,11 @@ d_standard_deviation: 40.89
 r_standard_deviation: 554.82
 
 ^ The distributions of GDP per capita among blue and red counties are different. From these figures, we would expect both distributions to be right-skewed, with a heavier skew for red counties, which is what the histogram shows. Additionally, based on the standard deviations, we would expect a wider distribution for red counties, which is also apparent in the histogram.
+
+
+[Brookings found that "Biden-voting counties equal 70% of America’s economy"](https://www.brookings.edu/blog/the-avenue/2020/11/09/biden-voting-counties-equal-70-of-americas-economy-what-does-this-mean-for-the-nations-political-economic-divide/). They note that _"2020 figures reflect unofficial results from 99% of counties. Figures for 2020 represent results from 100% of counties for which 2018 GDP data are available."_
+
+The slight difference is probably because my analysis was performed in mid-2021 using certified election results, and I was able to use 2019 GDP data released by the BEA in December 2020 (which was after Brookings completed their analysis).
 
 
 ## Data Sources
