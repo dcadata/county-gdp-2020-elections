@@ -28,7 +28,7 @@ r: 2550
 d: 0.699  
 r: 0.283
 
-**Proportion of GDP accounted for by counties won by each major party - weighted by vote share instead of using win/loss**  
+**Proportion of GDP accounted for by counties won by each major party, but weighting each county's GDP by its D/R vote share**  
 d: 0.498  
 r: 0.359
 
