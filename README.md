@@ -7,10 +7,15 @@
 
 ^ Visit the link for interactive visualizations with text descriptions. Screenshots below:
 
-| | | | |
-|:--:|:--:|:--:|:--:|
-|![1GDPwinner](img/1GDPwinner.PNG)|![2GDPwinner_bubbles](img/2GDPwinner_bubbles.PNG)|![3GDPweighted](img/3GDPweighted.PNG)|![4GDPpercapita](img/4GDPpercapita.PNG)|
-|US counties by GDP and winning party in 2020 presidential election|US counties by GDP and winning party in 2020 presidential election - bubble version|US counties by weighted GDP - each county's GDP weighted by its D/R vote share|US counties by GDP per capita and winning party|
+| | | |
+|:--:|:--:|:--:|
+|![1GDPwinner](img/1GDPwinner.PNG)|![2GDPwinner_bubbles](img/2GDPwinner_bubbles.PNG)|![3GDPweighted](img/3GDPweighted.PNG)|
+|US counties by GDP and winning party in 2020 presidential election|US counties by GDP and winning party in 2020 presidential election - bubble version|US counties by weighted GDP - each county's GDP weighted by its D/R vote share|
+
+| | |
+|:--:|:--:|
+|![4GDPpercapita](img/4GDPpercapita.PNG)|![5GDPpercapita_histogram](img/5GDPpercapita_histogram.png)|
+|US counties by GDP per capita and winning party|Distribution of GDP per capita among blue and red counties|
 
 (Please note that data is not available for all counties.)
 
@@ -39,6 +44,8 @@ d_mean: 60.66
 r_mean: 61.87  
 d_standard_deviation: 40.89  
 r_standard_deviation: 554.82
+
+^ The distributions of GDP per capita among blue and red counties are different. From these figures, we would expect both distributions to be right-skewed, with a heavier skew for red counties, which is what the histogram shows. Additionally, based on the standard deviations, we would expect a wider distribution for red counties, which is also apparent in the histogram.
 
 
 ## Data Sources
